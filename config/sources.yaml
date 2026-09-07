@@ -1,0 +1,44 @@
+# Target roles the discovery layer searches for.
+target_roles:
+  - "Software Engineering Intern Summer 2027"
+  - "Backend Engineering Intern"
+  - "ML Engineer Intern"
+  # - "New Grad Software Engineer"   # uncomment to widen to new-grad
+
+# Enabled connectors. requires_supervision=true connectors are EXCLUDED from the
+# unattended cron and only run via `job-agent run --supervised`.
+connectors:
+  - id: "github:simplify2027"
+    type: github_list
+    enabled: true
+    requires_supervision: false
+    params:
+      repo: "SimplifyJobs/Summer2027-Internships"
+      readme_branch: "dev"
+
+  - id: "github:vansh2027"
+    type: github_list
+    enabled: true
+    requires_supervision: false
+    params:
+      repo: "vanshb03/Summer2027-Internships"
+      readme_branch: "dev"
+
+  # Other connectors are plugged in later — GitHub is the only active source for now.
+  - id: "ats:greenhouse"
+    type: ats_api
+    enabled: false
+    requires_supervision: false
+    params:
+      platform: greenhouse
+      # boards resolved from company list / discovered links
+      boards: []
+
+  - id: "linkedin:supervised"
+    type: linkedin_supervised
+    enabled: false          # turn on when running a supervised sweep
+    requires_supervision: true
+    params:
+      # human-paced; halts on any challenge (see ARCHITECTURE.md 8.1)
+      max_results_per_run: 50
+      page_delay_seconds: 6

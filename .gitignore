@@ -1,0 +1,31 @@
+# Secrets
+.env
+*.pem
+
+# Personal / PII — real candidate data. Only the .example templates are tracked.
+config/profile.yaml
+config/ranking.history.jsonl
+resumes/*.pdf
+resumes/tailored/*
+!resumes/tailored/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Data / artifacts / local DB
+data/
+*.sqlite
+*.sqlite3
+*.db
+
+# OS
+.DS_Store

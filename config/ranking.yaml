@@ -1,0 +1,16 @@
+# Ranking weights (must sum to ~1.0). Editable at any time; re-ranking is instant.
+# The feedback loop (Phase 4) proposes changes here as versioned, reversible edits.
+weights:
+  role_match: 0.20
+  technical_match: 0.20
+  resume_match: 0.20
+  authorization_match: 0.15
+  experience_match: 0.10
+  location_match: 0.05
+  company_preference: 0.05
+  recency: 0.05
+
+# Recency scoring: full points if posted within `full_days`, linear decay to 0 by `zero_days`.
+recency:
+  full_days: 2
+  zero_days: 21

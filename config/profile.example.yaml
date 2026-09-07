@@ -1,0 +1,42 @@
+# Copy to config/profile.yaml (gitignored — contains your PII) and fill in.
+# Only VERIFIED facts go here. Nothing in this file may be fabricated by the agent;
+# resume tailoring and answer generation draw ONLY from what is written here + resume.
+
+candidate:
+  name: "Your Name"
+  email: "you@example.com"
+  phone: ""              # optional
+  location: "Tempe, AZ"
+  links:
+    github: ""
+    portfolio: ""
+
+education:
+  - degree: "M.S. Computer Science"
+    school: "Arizona State University"
+    graduation: "2027-05"
+    gpa: ""             # optional
+
+work_authorization:
+  # Informational screening only — not legal advice. Used to flag role compatibility.
+  needs_sponsorship: true
+  authorization_notes: ""    # free text; kept local
+
+preferences:
+  employment_type: ["internship"]     # internship | full_time
+  arrangement: ["hybrid", "remote", "onsite"]
+  locations_preferred: ["Seattle", "Bay Area", "Remote"]
+  target_industries: []
+  target_companies: []
+  compensation_min: null
+
+resumes:
+  master: "resumes/master.tex"          # the fixed LaTeX master resume
+  tailored_dir: "resumes/tailored"      # per-role variants generated here
+
+# Free-form skills; used by the matcher. Do not pad with skills you don't have.
+skills:
+  languages: ["Python", "Java", "C++"]
+  frameworks: []
+  cloud: ["AWS"]
+  other: []
